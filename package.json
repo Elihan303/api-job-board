@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  },
+  "name": "api-rest-job-board",
+  "version": "1.0.0",
+  "description": "API for job board",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Elihan303/api-job-board.git"
+  },
+  "keywords": [
+    "API",
+    "job",
+    "board"
+  ],
+  "author": "Elihan303",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Elihan303/api-job-board/issues"
+  },
+  "homepage": "https://github.com/Elihan303/api-job-board#readme"
+}
