@@ -1,6 +1,8 @@
 {
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "underscore": "^1.13.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.13"
@@ -10,7 +12,7 @@
   "description": "API for job board",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
