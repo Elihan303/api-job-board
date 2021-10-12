@@ -6,7 +6,11 @@
     "express": "^4.17.1",
     "mongoose": "^6.0.9",
     "morgan": "^1.10.0",
-    "underscore": "^1.13.1"
+    "underscore": "^1.13.1",
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@babel/node": "^7.15.8",
+    "@babel/preset-env": "^7.15.8"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.7",
@@ -20,6 +24,7 @@
   "description": "API for job board",
   "main": "index.js",
   "scripts": {
+    "start": "babel-node src/index.js --exec",
     "dev": "nodemon src/index.js",
     "server": "babel-node src/index.js",
     "devbabel": "nodemon --exec npm run server"
