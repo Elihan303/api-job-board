@@ -1,5 +1,5 @@
 //REQUIRE
- import express from 'express';
+import express from 'express';
 import morgan from 'morgan';
 import mongoose from 'mongoose';
 import path from 'path';
@@ -7,9 +7,14 @@ import cors from 'cors';
 const app = express();
 
 //CONNECTING TO DB
-mongoose.connect('mongodb://localhost/job_board')
- .then(db=> console.log('db Connected'))
- .catch(err =>console.log(err));
+//const uri = 'mongodb://localhost:27017/job-board';
+const uri = 'mongodb+srv://elihan_th:7lihXjqsXlvdviXG@cluster0.m2ic9.mongodb.net/job-board?retryWrites=true&w=majority'
+const options = {useNewUrlParser: true};
+
+mongoose.connect(uri, options).then(
+  () => {console.log('DB Ready')},
+  err => {console.log(err)}
+);
 
 //SETTINGS
 app.set('port',process.env.PORT || 4000);
@@ -28,10 +33,11 @@ app.use(express.json());
 
 //ROUTES
 
-app.use('/api/createjob', require('./routes/create_job.js'))
+/* app.use('/api/createjob', require('./routes/create_job.js'))
 app.use('/api/jobinfo', require('./routes/job_info.js'))
 app.use('/api/viewjob', require('./routes/view_job'))
-app.use('/api/login', require('./routes/login_job.js'))
+app.use('/api/login', require('./routes/login_job.js')) */
+app.use('/api', require('./routes/create_user'));
 
 
 

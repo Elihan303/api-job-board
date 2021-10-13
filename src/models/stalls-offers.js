@@ -1,9 +1,10 @@
-const mongoose= require('mongoose');
+import mongoose from 'mongoose';
 const Schema= mongoose.Schema;
 
+//creamos modelo
 const stalls_offers_Schema= new Schema({
-    posicion: String,
-    descripcion: String,
+    Posicion: String,
+    Descripcion: String,
     Ubicacion: String,
     URL: String,
     Tipo: String,
@@ -12,5 +13,9 @@ const stalls_offers_Schema= new Schema({
     Fecha: Date
 })
 
-module.exports= mongoose.model('puesto_ofertas', stalls_offers_Schema);
+//module.exports= mongoose.model('puesto_ofertas', stalls_offers_Schema);
+
+//Convertir a modelo
+const puesto_ofertas= mongoose.model('puesto_ofertas', stalls_offers_Schema);
+export default puesto_ofertas;
 

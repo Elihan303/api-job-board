@@ -26,7 +26,7 @@
   "scripts": {
     "start": "babel-node src/index.js --exec",
     "dev": "nodemon src/index.js",
-    "server": "babel-node src/index.js",
+    "server": "babel-node src/index.js ",
     "devbabel": "nodemon --exec npm run server"
   },
   "repository": {
