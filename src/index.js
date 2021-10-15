@@ -6,9 +6,15 @@ import path from 'path';
 import cors from 'cors';   
 const app = express();
 
+
+//SETTINGS
+app.set('port',process.env.PORT || 4000);
+
+
+
 //CONNECTING TO DB
-//const uri = 'mongodb://localhost:27017/job-board';
-const uri = 'mongodb+srv://elihan_th:7lihXjqsXlvdviXG@cluster0.m2ic9.mongodb.net/job-board?retryWrites=true&w=majority'
+const uri = 'mongodb://localhost:27017/job-board';
+//const uri = 'mongodb+srv://elihan_th:7lihXjqsXlvdviXG@cluster0.m2ic9.mongodb.net/job-board?retryWrites=true&w=majority'
 const options = {useNewUrlParser: true};
 
 mongoose.connect(uri, options).then(
@@ -16,8 +22,7 @@ mongoose.connect(uri, options).then(
   err => {console.log(err)}
 );
 
-//SETTINGS
-app.set('port',process.env.PORT || 4000);
+
 
 
 //MIDDLEWARES
@@ -32,12 +37,9 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
 //ROUTES
-
-/* app.use('/api/createjob', require('./routes/create_job.js'))
-app.use('/api/jobinfo', require('./routes/job_info.js'))
-app.use('/api/viewjob', require('./routes/view_job'))
-app.use('/api/login', require('./routes/login_job.js')) */
-app.use('/api', require('./routes/create_user'));
+app.use('/api/login', require('./routes/login_job')); 
+app.use('/api', require('./routes/user'));
+app.use('/api/job', require('./routes/job'))
 
 
 
