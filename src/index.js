@@ -38,7 +38,7 @@ app.use(express.json());
 
 //ROUTES
 app.use('/api/login', require('./routes/login_job')); 
-app.use('/api', require('./routes/user'));
+app.use('/api/user', require('./routes/user'));
 app.use('/api/job', require('./routes/job'))
 
 

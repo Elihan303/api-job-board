@@ -14,7 +14,7 @@ const { verificarAuth, verificarAdmin } = require('../middlewares/authentication
 
 
 //Obtener datos por parametro
-router.get('/users/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
         const _id = req.params.id;
         const userDB = await users.findOne({ _id });
@@ -31,7 +31,7 @@ router.get('/users/:id', async (req, res) => {
 })
 
 //Obtener todos los datos 
-router.get('/users', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const userDB = await users.find();
         res.status(200).json(userDB);
@@ -48,7 +48,7 @@ router.get('/users', async (req, res) => {
 
 
 //Crear datos
-router.post('/create-user', async (req, res) => {
+router.post('/', async (req, res) => {
     const body = {
         cedula: req.body.cedula,
         nombre: req.body.nombre,
@@ -75,7 +75,7 @@ router.post('/create-user', async (req, res) => {
 })
 
 //Eliminar datos
-router.delete('/users/:id', async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
         const _id = req.params.id;
         const userDB = await users.findByIdAndDelete({ _id });
@@ -98,7 +98,7 @@ router.delete('/users/:id', async (req, res) => {
 })
 
 //Editar datos
-router.put('/users/:id', [verificarAuth, verificarAdmin], async (req, res) => {
+router.put('/:id', [verificarAuth, verificarAdmin], async (req, res) => {
     const _id = req.params.id;
     const body = _.pick(req.body, ['cedula', 'nombre', 'email', 'telefono', 'contraseña']);
     if (body.contraseña) {
