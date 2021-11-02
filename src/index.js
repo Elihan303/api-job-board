@@ -11,7 +11,7 @@ const app = express();
 app.set('port',process.env.PORT || 4000);
 
 
-
+/*
 //CONNECTING TO DB
 const uri = 'mongodb://localhost:27017/job-board';
 //const uri = 'mongodb+srv://elihan_th:7lihXjqsXlvdviXG@cluster0.m2ic9.mongodb.net/job-board?retryWrites=true&w=majority'
@@ -21,7 +21,7 @@ mongoose.connect(uri, options).then(
   () => {console.log('DB Ready')},
   err => {console.log(err)}
 );
-
+*/
 
 
 
@@ -51,8 +51,9 @@ app.use(history());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-
+/*
 //SERVER START
 app.listen(app.get('port'),()=>{
   console.log(`Server on http://localhost:${app.get('port')}`)
 })
+*/
