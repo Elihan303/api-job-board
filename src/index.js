@@ -51,9 +51,8 @@ app.use(history());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-/*
+
 //SERVER START
 app.listen(app.get('port'),()=>{
   console.log(`Server on http://localhost:${app.get('port')}`)
 })
-*/

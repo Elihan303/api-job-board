@@ -26,7 +26,7 @@
   "description": "API for job board",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node src/index.js --exec",
+    "start": "nodemon --exec npm run server",
     "dev": "nodemon src/index.js",
     "server": "babel-node src/index.js ",
     "devbabel": "nodemon --exec npm run server"
